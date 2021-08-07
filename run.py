@@ -58,4 +58,13 @@ def validate_parcel_number(values):
     return True
 
 
+def parcels_per_driver(parcels):
+    """
+     Calculate how many parcels per driver and update the spreadsheet.
+    """
+    per_day_parcels = round(int(parcels) / 10)
+    print(per_day_parcels)
+
+
 parcels = get_parcels_number()
+parcels_per_driver(parcels)
