@@ -22,10 +22,30 @@ def get_parcels_number():
      Get parcels numbers from central depo.
     """
     print("Please enter the parcels number	expected for tomorrow")
-    print("The number should be > 10 and <= 1000\n")
+    print("The number should be > 10 and <= 2000\n")
 
     data_str = input("Enter your data here:")
-    print(f"The numbers of parsels is {data_str}")
+    #  print(f"The numbers of parsels is {data_str}")
+
+    validate_parcel_number(data_str)
+
+
+def validate_parcel_number(values):
+    """
+     Raises ValueErrror if the number is smaller than 10 or bigger than 2000.
+    """
+    try:
+        if int(values) <= 10:
+            raise ValueError(
+                f"{values} and is not enough for your 10 drivers!"
+            )
+        elif int(values) > 2000:
+            raise ValueError(
+                f"{values}.\nYou need {round(int(values) / 200)}"
+                " dirvers for tomorrow"
+            )
+    except ValueError as e:
+        print(f"Warning!\nThe number of parcels is {e}\n")
 
 
 get_parcels_number()
