@@ -115,8 +115,39 @@ def update_hours_worksheet(hours):
     print("Hours woeksheet updated successfuly.\n")
 
 
+def get_salary(hours):
+    """
+     Calculate salary per day.
+    """
+    headings = SHEET.worksheet("salary").get_all_values()[0]
+    salary_per_day = round(int(parcels) / int(len(headings)) / 30) * 12
+    # Driver get 12 € per hour
+
+    print(f"{salary_per_day} euro per day")
+
+    row = []
+    for x in range(len(headings)):
+        x = salary_per_day
+        row.append(x)
+    # print(row)
+    return row
+
+
+def update_salary_worksheet(salary):
+    """
+     Update salary worksheet, add a new row with the number
+      of parcels per driver
+    """
+    print("Updating salary worksheet...\n")
+    salary_worksheet = SHEET.worksheet("salary")
+    salary_worksheet.append_row(salary)
+    print("Hours salary updated successfuly.\n")
+
+
 parcels = get_parcels_number()
 quantity = parcels_per_driver(parcels)
 update_parcels_worksheet(quantity)
 hours = get_hours(parcels)
 update_hours_worksheet(hours)
+salary = get_salary(hours)
+update_salary_worksheet(salary)
