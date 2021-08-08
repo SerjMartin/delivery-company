@@ -86,6 +86,37 @@ def update_parcels_worksheet(quantity):
     print("Parcels woeksheet updated successfuly.\n")
 
 
+def get_hours(parcels):
+    """
+     Calculate how many hours per day.
+    """
+    headings = SHEET.worksheet("hours").get_all_values()[0]
+    hours_per_day = round(int(parcels) / int(len(headings)) / 30) + 1
+    # One driver can do 30 parcel per hour + 1 hour for break
+
+    print(f"{hours_per_day} hour per day")
+
+    row = []
+    for x in range(len(headings)):
+        x = hours_per_day
+        row.append(x)
+    # print(row)
+    return row
+
+
+def update_hours_worksheet(hours):
+    """
+     Update hours worksheet, add a new row with the number
+      of parcels per driver
+    """
+    print("Updating hours worksheet...\n")
+    hours_worksheet = SHEET.worksheet("hours")
+    hours_worksheet.append_row(hours)
+    print("Hours woeksheet updated successfuly.\n")
+
+
 parcels = get_parcels_number()
 quantity = parcels_per_driver(parcels)
 update_parcels_worksheet(quantity)
+hours = get_hours(parcels)
+update_hours_worksheet(hours)
