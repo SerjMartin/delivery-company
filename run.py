@@ -62,9 +62,30 @@ def parcels_per_driver(parcels):
     """
      Calculate how many parcels per driver and update the spreadsheet.
     """
-    per_day_parcels = round(int(parcels) / 10)
-    print(per_day_parcels)
+    headings = SHEET.worksheet("parcels").get_all_values()[0]
+    # print(headings)
+    per_day_parcels = round(int(parcels) / int(len(headings)))
+    print(f"{per_day_parcels} parcels per driver")
+
+    row = []
+    for x in range(len(headings)):
+        x = per_day_parcels
+        row.append(x)
+    # print(row)
+    return row
+
+
+def update_parcels_worksheet(quantity):
+    """
+     Update parcels worksheet, add a new row with the number
+      of parcels per driver
+    """
+    print("Updating parcels worksheet...\n")
+    parcels_worksheet = SHEET.worksheet("parcels")
+    parcels_worksheet.append_row(quantity)
+    print("Parcels woeksheet updated successfuly.\n")
 
 
 parcels = get_parcels_number()
-parcels_per_driver(parcels)
+quantity = parcels_per_driver(parcels)
+update_parcels_worksheet(quantity)
