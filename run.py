@@ -27,7 +27,7 @@ def get_parcels_number():
          will be valid for 10 drivers.
         """
 
-        print("Please enter the parcels number	expected for tomorrow")
+        print("Please enter the parcels number")
         print("The number should be > 10 and <= 2000\n")
 
         data_str = input("Enter your data here:\n")
@@ -188,3 +188,6 @@ salary = get_salary(hours)
 update_salary_worksheet(salary)
 profit = get_profit(hours)
 update_profit_worksheet(profit)
+
+
+print("Welcome to delivery company data automation")
