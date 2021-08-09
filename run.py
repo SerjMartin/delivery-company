@@ -30,7 +30,7 @@ def get_parcels_number():
         print("Please enter the parcels number	expected for tomorrow")
         print("The number should be > 10 and <= 2000\n")
 
-        data_str = input("Enter your data here:")
+        data_str = input("Enter your data here:\n")
 
         if validate_parcel_number(data_str):
             print("Data is valid")
