@@ -155,8 +155,8 @@ def get_profit(hours):
     full_paymant = salary_per_day * len(headings)
     print(f"You paid to drivers:{full_paymant} euro.")
     # print(full_paymant)
-    full_profit = int(parcels) * 10 - int(full_paymant)
-    # Delivery company charging 10 € per parcel for service
+    full_profit = int(parcels) * 5 - int(full_paymant)
+    # Delivery company charging 5 € per parcel for service
     # print(full_profit)
     print(f"Your profit is: {full_profit} euro.")
     headings = SHEET.worksheet("profit").get_all_values()[0]
