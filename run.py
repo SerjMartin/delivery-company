@@ -28,7 +28,7 @@ def get_parcels_number():
         """
 
         print("Please enter the parcels number")
-        print("The number should be > 10 and <= 2000\n")
+        print("The number should be >= 10 and <= 2000\n")
 
         data_str = input("Enter your data here:\n")
 
@@ -50,7 +50,12 @@ def validate_parcel_number(values):
         elif int(values) > 2000:
             raise ValueError(
                 f"{values}.\nYou need {round(int(values) / 200)}"
-                " dirvers for tomorrow"
+                " drivers for tomorrow"
+            )
+        else:
+            raise ValueError(
+                "That number is not valid, please enter a valid"
+                " number between 10 and 2000"
             )
     except ValueError as e:
         print(f"Warning!\nThe number of parcels is {e}\n")
@@ -83,7 +88,7 @@ def update_parcels_worksheet(quantity):
     print("Updating parcels worksheet...\n")
     parcels_worksheet = SHEET.worksheet("parcels")
     parcels_worksheet.append_row(quantity)
-    print("Parcels woeksheet updated successfuly.\n")
+    print("Parcels worksheet updated successfuly.\n")
 
 
 def get_hours(parcels):
