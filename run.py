@@ -21,6 +21,7 @@ def get_parcels_number():
     """
      Get parcels numbers from central depo.
     """
+    print("Welcome to delivery company data automation!")
     while True:
         """
          While loop will continue until the input data
@@ -45,20 +46,17 @@ def validate_parcel_number(values):
     try:
         if int(values) < 10:
             raise ValueError(
-                f"{values} and is not enough for your 10 drivers!"
+                f"Warning!\nThe number of parcels is {values}"
+                " and is not enough for your 10 drivers!"
             )
         elif int(values) > 2000:
             raise ValueError(
-                f"{values}.\nYou need {round(int(values) / 200)}"
+                f"Warning!\nThe number of parcels is{values}.\n"
+                f"You need {round(int(values) / 200)}"
                 " drivers for tomorrow"
             )
-        else:
-            raise ValueError(
-                "That number is not valid, please enter a valid"
-                " number between 10 and 2000"
-            )
     except ValueError as e:
-        print(f"Warning!\nThe number of parcels is {e}\n")
+        print(f"Invalid data: {e}, please try again.\n")
         return False
     return True
 
@@ -68,7 +66,6 @@ def parcels_per_driver(parcels):
      Calculate how many parcels per driver and update the spreadsheet.
     """
     headings = SHEET.worksheet("parcels").get_all_values()[0]
-    # print(headings)
     per_day_parcels = round(int(parcels) / int(len(headings)))
     print(f"Every driver got per day:{per_day_parcels} parcels.")
 
@@ -76,7 +73,6 @@ def parcels_per_driver(parcels):
     for x in range(len(headings)):
         x = per_day_parcels
         row.append(x)
-    # print(row)
     return row
 
 
@@ -105,7 +101,6 @@ def get_hours(parcels):
     for x in range(len(headings)):
         x = hours_per_day
         row.append(x)
-    # print(row)
     return row
 
 
@@ -124,7 +119,7 @@ def get_salary(hours):
      Calculate salary per day.
     """
     headings = SHEET.worksheet("salary").get_all_values()[0]
-    salary_per_day = round(int(parcels) / int(len(headings)) / 30) * 12
+    salary_per_day = round(int(parcels) / int(len(headings)) / 30 + 1) * 12
     # Driver get 12 € per hour
 
     print(f"For every driver you pay:{salary_per_day} euro")
@@ -133,7 +128,6 @@ def get_salary(hours):
     for x in range(len(headings)):
         x = salary_per_day
         row.append(x)
-    # print(row)
     return row
 
 
@@ -154,15 +148,13 @@ def get_profit(hours):
      and your profit
     """
     headings = SHEET.worksheet("salary").get_all_values()[0]
-    salary_per_day = round(int(parcels) / int(len(headings)) / 30) * 12
+    salary_per_day = round(int(parcels) / int(len(headings)) / 30 + 1) * 12
     # Driver get 12 € per hour
 
     full_paymant = salary_per_day * len(headings)
     print(f"You paid to drivers:{full_paymant} euro.")
-    # print(full_paymant)
     full_profit = int(parcels) * 5 - int(full_paymant)
     # Delivery company charging 5 € per parcel for service
-    # print(full_profit)
     print(f"Your profit is: {full_profit} euro.")
     headings = SHEET.worksheet("profit").get_all_values()[0]
     row = []
@@ -184,6 +176,24 @@ def update_profit_worksheet(profit):
     print("Profit worksheet updated successfuly.\n")
 
 
+def start_again():
+    """
+     This function will give the option to enter new data.
+    """
+    while True:
+        print("Do you want to input new data?\nYes: y\nNo: n")
+
+        data_str = input("Enter your option here:\n")
+
+        if data_str == "y":
+            get_parcels_number()
+        elif data_str == "n":
+            print("Thanks a lot and have a nice day!")
+            break
+        else:
+            print("Please enter valid data!")
+
+
 parcels = get_parcels_number()
 quantity = parcels_per_driver(parcels)
 update_parcels_worksheet(quantity)
@@ -193,6 +203,4 @@ salary = get_salary(hours)
 update_salary_worksheet(salary)
 profit = get_profit(hours)
 update_profit_worksheet(profit)
-
-
-print("Welcome to delivery company data automation")
+start_again()
