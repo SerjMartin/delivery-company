@@ -46,14 +46,11 @@ def validate_parcel_number(values):
     try:
         if int(values) < 10:
             raise ValueError(
-                f"Warning!\nThe number of parcels is {values}"
-                " and is not enough for your 10 drivers!"
+                f"{values}"
             )
         elif int(values) > 2000:
             raise ValueError(
-                f"Warning!\nThe number of parcels is{values}.\n"
-                f"You need {round(int(values) / 200)}"
-                " drivers for tomorrow"
+                f"{values}"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
@@ -186,7 +183,8 @@ def start_again():
         data_str = input("Enter your option here:\n")
 
         if data_str == "y":
-            get_parcels_number()
+            print("Press on the red button on top and enter your data.")
+            break
         elif data_str == "n":
             print("Thanks a lot and have a nice day!")
             break
