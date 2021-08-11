@@ -11,6 +11,7 @@ This program after input the number (the number is the suggested number of parce
 - Push all the data to delivery_company spreadsheets.
 
 [Here is the live version of my project.](https://delivery-compane.herokuapp.com/)
+![Responsice Mockup](static/images/mockup.png)
 ## Table of Contents
   - [How to use](#how-to-use)
   - [Features](#features)
