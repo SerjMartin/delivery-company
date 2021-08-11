@@ -2,13 +2,13 @@
 # Delivery Company
 ### About
 ## Table of Contents
-  - [User experiense](#user-experiense)
+  - [How to use](#how-to-use)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
   - [Content](#content)
-## User experiense
+## How to use
 ## Features
 ## Technologies Used
 ## Testing
