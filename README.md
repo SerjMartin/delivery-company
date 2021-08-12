@@ -33,6 +33,22 @@ Project idea I got from my workplace. I am working in the delivery company at a 
 
 ## Features
 ## Technologies Used
+
+__Lucid Wireframe__
+
+![Wireframe](static/images/wireframe.png)
+
+ - [Lucid](https://lucid.app/)
+   - To build the wireframe.
+ - [Github](https://github.com/)
+  
+   - For the hosting and version control of the website and for storage media content.
+ - [Gitpod](https://gitpod.io/)
+
+   - The development enviroment used used for writing the code for the website.
+ - [Heroku](https://dashboard.heroku.com/)
+   
+    - For deployment
 ## Testing
  ### Validator Testing
 - PEP8
