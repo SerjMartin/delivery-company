@@ -21,6 +21,10 @@ This program after input the number (the number is the suggested number of parce
   - [Deployment](#deployment)
   - [Content](#content)
 ## How to use
+Delivery company automatization program is build to save time, money and increase efficiency in the company.
+In this version, the user enters the number of parcels expected for delivery. A number has to be bigger than 10 and smaller than 2000 because less than 10 is not enough for 10 drivers and more than 2000 is too much for 10 drivers (capacity of delivering  parcels is max 200 parcels per driver).
+The program is splitting equally the number of parcels between 10 drivers. Calculate every driver's working hours, salary, profit of the company and will push all the data to delivery_company spreadsheets.
+
 ## Features
 ## Technologies Used
 ## Testing
