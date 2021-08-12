@@ -29,6 +29,8 @@ In this version, the user enters the number of parcels expected for delivery. A 
 The program is splitting equally the number of parcels between 10 drivers. Calculate every driver's working hours, salary, profit of the company and will push all the data to delivery_company spreadsheets.
 
 ## Project idea
+Project idea I got from my workplace. I am working in the delivery company at a moment and I thought will be helpful to use automatization program to save time, money and increase efficiency in the company.
+
 ## Features
 ## Technologies Used
 ## Testing
