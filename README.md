@@ -104,4 +104,23 @@ __Lucid Wireframe__
 
 ![Validator](static/images/validator.png)
 ## Deployment
+
+This website was deployed in Heroku using the following steps below.
+
+- In the terminal using the command "pip3 freeze -> requarements.txt" to save any libraries that need to be installed.
+- In Heroku click the " new" button in the upper up corner, then select "create new app".
+- Go to the settings tab, add CREDS in Config Vars, then add the python and node.js build pack.
+- In the deploy tab, click on GitHub as a deployment method.
+- Search for the repository to connect to.
+- Click on Deploy Branch, wait for the app to build and then click on the "View" link.
+
+### Cloning
+
+If you wish to clone this repository you can follow the following steps below.
+
+- Go to the Git Hub website and log in.
+- Locate the Repository used for this project.
+- Under the Repository's name locate the "Code" button.
+- To clone the Repository use the HTTPS link.
+
 ## Content
