@@ -22,7 +22,7 @@ This program after input the number (the number is the suggested number of parce
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
-  - [Content](#content)
+  - [Acknowledgement](#acknowledgement)
 ## How to use
 
 Delivery company automatization program is build to save time, money and increase efficiency in the company.
@@ -98,6 +98,12 @@ __Lucid Wireframe__
    
     - For deployment
 ## Testing
+
+I have manually tested this project by following steps.
+
+- Passed the code through a PEP8 linter and confirmed there are no problems.
+- Tested in my local terminal and the Coding Institute Heroku terminal.
+- Given invalid data.
  ### Validator Testing
 - PEP8
    - No errors were returned from PEP8online.com
@@ -123,4 +129,7 @@ If you wish to clone this repository you can follow the following steps below.
 - Under the Repository's name locate the "Code" button.
 - To clone the Repository use the HTTPS link.
 
-## Content
+## Acknowledgement
+ 
+- Thanks to everyone who took their time to provide me with constructive feedback on the Slack community app and student support.
+- Big thanks to my mentor 'Tim Nelson' for his time to answer all my questions and his professional advices.
