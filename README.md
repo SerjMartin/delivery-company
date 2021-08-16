@@ -58,7 +58,7 @@ Project idea I got from my workplace. I am working in the delivery company at a 
 
 - Option
   
-  - Give to a user the option if he\she wants to input new data.
+  - Give to a user the option if he\she wants to input new data again.
   - If yes, print instructions on what to do to input new data.
   - If no, print the 'Have a nice day' string.
 
