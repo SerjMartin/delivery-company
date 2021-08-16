@@ -56,6 +56,22 @@ Project idea I got from my workplace. I am working in the delivery company at a 
 
 ![Feature2](static/images/pic2.png)
 
+- Updated parcels worksheet.
+
+![Parcels](static/images/parcels.png)
+
+- Updated hours worksheet.
+
+![Hours](static/images/hours.png)
+
+- Updated salary worksheet.
+ 
+![Salary](static/images/salary.png)
+
+- Updated profit worksheet.
+
+![Profit](static/images/profit.png)
+
 - Option
   
   - Give to a user the option if he\she wants to input new data again.
