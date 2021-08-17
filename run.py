@@ -32,8 +32,11 @@ def get_parcels_number():
         print("The number should be >= 10 and <= 2000\n")
 
         data_str = input("Enter your data here:\n")
-
-        if validate_parcel_number(data_str):
+        isNotNumber = any(not char.isdigit() for char in data_str)
+        if isNotNumber:
+            print("Please enter valid number!")
+            print("---------------------------")
+        elif validate_parcel_number(data_str):
             print("Data is valid")
             break
     return data_str
@@ -54,6 +57,7 @@ def validate_parcel_number(values):
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
+        print("-------------------------------------")
         return False
     return True
 
@@ -92,7 +96,7 @@ def get_hours(parcels):
     hours_per_day = round(int(parcels) / int(len(headings)) / 30) + 1
     # One driver can do 30 parcel per hour + 1 hour for break
 
-    print(f"Every driver worked:{hours_per_day} hour.")
+    print(f"Every driver work:{hours_per_day} hour.")
 
     row = []
     for x in range(len(headings)):
@@ -119,7 +123,7 @@ def get_salary(hours):
     salary_per_day = round(int(parcels) / int(len(headings)) / 30 + 1) * 12
     # Driver get 12 € per hour
 
-    print(f"For every driver you pay:{salary_per_day} euro")
+    print(f"Every driver get pay:{salary_per_day} euro")
 
     row = []
     for x in range(len(headings)):
@@ -149,10 +153,10 @@ def get_profit(hours):
     # Driver get 12 € per hour
 
     full_paymant = salary_per_day * len(headings)
-    print(f"You paid to drivers:{full_paymant} euro.")
+    print(f"All drivers get pay:{full_paymant} euro.")
     full_profit = int(parcels) * 5 - int(full_paymant)
     # Delivery company charging 5 € per parcel for service
-    print(f"Your profit is: {full_profit} euro.")
+    print(f"Profit is: {full_profit} euro.")
     headings = SHEET.worksheet("profit").get_all_values()[0]
     row = []
     for x in range(len(headings)):
@@ -171,6 +175,7 @@ def update_profit_worksheet(profit):
     profit_worksheet = SHEET.worksheet("profit")
     profit_worksheet.append_row(profit)
     print("Profit worksheet updated successfuly.\n")
+    print("-----------------------------------------")
 
 
 def start_again():
@@ -190,6 +195,7 @@ def start_again():
             break
         else:
             print("Please enter valid data!")
+            print("-------------------------")
 
 
 parcels = get_parcels_number()
