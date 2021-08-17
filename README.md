@@ -25,15 +25,15 @@ This program after input the number (the number is the suggested number of parce
   - [Acknowledgement](#acknowledgement)
 ## How to use
 
-Delivery company automatization program is build to save time, money and increase efficiency in the company.
+Delivery company automatization program is built to save time, money and increase efficiency in the company.
 
 In this version, the user enters the number of parcels expected for delivery. A number has to be bigger than 10 and smaller than 2000 because less than 10 is not enough for 10 drivers and more than 2000 is too much for 10 drivers (capacity of delivering  parcels is max 200 parcels per driver).
 
-The program is splitting equally the number of parcels between 10 drivers. Calculate every driver's working hours, salary, profit of the company and will push all the data to delivery_company spreadsheets.
+The program is equally splitting the number of parcels between 10 drivers. Calculate every driver's working hours, salary, profit of the company and will push all the data to delivery_company spreadsheets.
 
 ## Project idea
 
-Project idea I got from my workplace. I am working in the delivery company at a moment and I thought will be helpful to use automatization program to save time, money and increase efficiency in the company.
+I got this project idea from my workplace. I am working in the delivery company at the moment and I thought it will be helpful to use the automatization program to save time, money and increase efficiency in the company.
 
 ## Features
 
@@ -51,7 +51,7 @@ Project idea I got from my workplace. I am working in the delivery company at a 
 - Update worksheet
   
    - Calculate driver's parcels, hours, salary and company's profit.
-   - Update delivery_company spreadsheet
+   - Update delivery_company spreadsheet.
 
 
 ![Feature2](static/images/pic2.png)
@@ -74,7 +74,7 @@ Project idea I got from my workplace. I am working in the delivery company at a 
 
 - Option
   
-  - Give to a user the option if he\she wants to input new data again.
+  - Give the user an option to input new data again.
   - If yes, print instructions on what to do to input new data.
   - If no, print the 'Have a nice day' string.
 
@@ -114,7 +114,7 @@ I have manually tested this project by following steps.
 This website was deployed in Heroku using the following steps below.
 
 - In the terminal using the command "pip3 freeze -> requarements.txt" to save any libraries that need to be installed.
-- In Heroku click the " new" button in the upper up corner, then select "create new app".
+- In Heroku click the " new" button in the upper corner, then select "create new app".
 - Go to the settings tab, add CREDS in Config Vars, then add the python and node.js build pack.
 - In the deploy tab, click on GitHub as a deployment method.
 - Search for the repository to connect to.
