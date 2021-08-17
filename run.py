@@ -28,7 +28,7 @@ def get_parcels_number():
          will be valid for 10 drivers.
         """
 
-        print("Please enter the parcels number")
+        print("Please enter the parcel number")
         print("The number should be >= 10 and <= 2000\n")
 
         data_str = input("Enter your data here:\n")
@@ -68,7 +68,7 @@ def parcels_per_driver(parcels):
     """
     headings = SHEET.worksheet("parcels").get_all_values()[0]
     per_day_parcels = round(int(parcels) / int(len(headings)))
-    print(f"Every driver got per day:{per_day_parcels} parcels.")
+    print(f"Driver's parsels per day: {per_day_parcels} parcels")
 
     row = []
     for x in range(len(headings)):
@@ -96,7 +96,7 @@ def get_hours(parcels):
     hours_per_day = round(int(parcels) / int(len(headings)) / 30) + 1
     # One driver can do 30 parcel per hour + 1 hour for break
 
-    print(f"Every driver work:{hours_per_day} hour.")
+    print(f"Driver's working hours per day: {hours_per_day} hours")
 
     row = []
     for x in range(len(headings)):
@@ -123,7 +123,7 @@ def get_salary(hours):
     salary_per_day = round(int(parcels) / int(len(headings)) / 30 + 1) * 12
     # Driver get 12 € per hour
 
-    print(f"Every driver get pay:{salary_per_day} euro")
+    print(f"Driver's salary per day: {salary_per_day} euro")
 
     row = []
     for x in range(len(headings)):
@@ -153,10 +153,10 @@ def get_profit(hours):
     # Driver get 12 € per hour
 
     full_paymant = salary_per_day * len(headings)
-    print(f"All drivers get pay:{full_paymant} euro.")
+    print(f"All drivers get payed: {full_paymant} euro.")
     full_profit = int(parcels) * 5 - int(full_paymant)
     # Delivery company charging 5 € per parcel for service
-    print(f"Profit is: {full_profit} euro.")
+    print(f"Company profit is: {full_profit} euro.")
     headings = SHEET.worksheet("profit").get_all_values()[0]
     row = []
     for x in range(len(headings)):
