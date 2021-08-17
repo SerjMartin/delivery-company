@@ -11,7 +11,7 @@ This program after input the number (the number is the suggested number of parce
 - Calculate the profit.
 - Push all the data to delivery_company spreadsheets.
 
-[Here is the live version of my project.](https://delivery-compane.herokuapp.com/)
+[Here is the live version of my project.](https://delivery-company.herokuapp.com/)
 
 ![Responsice Mockup](static/images/mockup.png)
 
